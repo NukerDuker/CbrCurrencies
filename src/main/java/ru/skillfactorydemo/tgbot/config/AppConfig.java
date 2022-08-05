@@ -4,12 +4,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.web.filter.CharacterEncodingFilter;
-import org.springframework.ws.soap.SoapMessageFactory;
 import org.springframework.ws.soap.saaj.SaajSoapMessageFactory;
-import ru.skillfactorydemo.tgbot.DTO.GetCursOnDateXml;
-import ru.skillfactorydemo.tgbot.DTO.GetCursOnDateXmlResponse;
-import ru.skillfactorydemo.tgbot.DTO.GetCursOnDateXmlResult;
-import ru.skillfactorydemo.tgbot.DTO.ValuteCursOnDate;
+import ru.skillfactorydemo.tgbot.dto.GetCursOnDateXml;
+import ru.skillfactorydemo.tgbot.dto.GetCursOnDateXmlResponse;
+import ru.skillfactorydemo.tgbot.dto.GetCursOnDateXmlResult;
+import ru.skillfactorydemo.tgbot.dto.ValuteCursOnDate;
 import ru.skillfactorydemo.tgbot.service.CentralRussianBankService;
 
 import javax.xml.soap.MessageFactory;
@@ -32,8 +31,8 @@ public class AppConfig {
                 GetCursOnDateXml.class,
                 GetCursOnDateXmlResponse.class,
                 GetCursOnDateXmlResult.class,
-                ValuteCursOnDate.class
-        );
+                ValuteCursOnDate.class);
+
         cbrService.setMarshaller(jaxb2Marshaller);
         cbrService.setUnmarshaller(jaxb2Marshaller);
         return cbrService;
