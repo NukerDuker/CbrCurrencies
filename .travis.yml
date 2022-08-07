@@ -1,4 +1,0 @@
-language: java
-jdk:
-  -coretto-11
-script: mvn clean install -DskipTests
