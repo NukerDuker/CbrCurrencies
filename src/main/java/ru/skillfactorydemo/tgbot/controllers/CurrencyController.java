@@ -3,7 +3,6 @@ package ru.skillfactorydemo.tgbot.controllers;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.skillfactorydemo.tgbot.dto.ValuteCursOnDate;
@@ -29,5 +28,11 @@ public class CurrencyController {
     @ApiOperation(value = "Получение количества пополнений, которые превышают определенную сумму")
     public int getStatsOfIncomesThatGreater(@RequestParam(value = "amount")BigDecimal amount) {
         return statsService.getCountOfIncomesThatGreater(amount);
+    }
+
+    @GetMapping("/getSpends")
+    @ApiOperation(value = "Получение списка трат выше определенной суммы")
+    public List<Integer> getSpendsGraterThan(@RequestParam(value = "amount")Long amount) {
+        return statsService.getSpendsListGraterThan(amount);
     }
 }

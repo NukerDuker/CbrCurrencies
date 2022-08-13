@@ -1,11 +1,11 @@
 package ru.skillfactorydemo.tgbot.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Service;
 import ru.skillfactorydemo.tgbot.repository.StatsRepository;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -15,5 +15,9 @@ public class StatsService {
 
     public int getCountOfIncomesThatGreater(BigDecimal amount) {
         return statsRepository.getCountOfIncomesThatGreaterThan(amount);
+    }
+
+    public List<Integer> getSpendsListGraterThan(Long amount) {
+        return statsRepository.getSpendsGraterThan(amount);
     }
 }
