@@ -1,0 +1,1 @@
+ALTER TABLE spend ADD COLUMN date date;

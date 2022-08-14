@@ -7,6 +7,8 @@ import ru.skillfactorydemo.tgbot.repository.IncomeRepository;
 import ru.skillfactorydemo.tgbot.repository.SpendRepository;
 
 import java.math.BigDecimal;
+import java.sql.Date;
+import java.time.LocalDate;
 
 @Service
 @RequiredArgsConstructor
@@ -30,6 +32,7 @@ public class FinanceService {
             Spend spend = new Spend();
             spend.setChatId(chatId);
             spend.setSpend(new BigDecimal(price));
+            spend.setDate(Date.valueOf(LocalDate.now()));
             spendRepository.save(spend);
             message = "Расход в размере " + price + " был успешно добавлен";
         }
