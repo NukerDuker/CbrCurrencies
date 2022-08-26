@@ -20,6 +20,6 @@ class IncomeRepositoryTest {
     public void testDataScripts() {
         Optional<Income> income = incomeRepository.findById(12345L);
         assertTrue(income.isPresent());
-        assertEquals(new BigDecimal("3000.00`"), income.get().getIncome());
+        assertEquals(new BigDecimal("3000.00"), income.get().getIncome());
     }
 }
