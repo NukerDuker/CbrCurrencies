@@ -1,1 +1,1 @@
-insert into incomes (id, chat_id, income) values (12345, 2, 3000)
+insert into spend (id, chat_id, spend) values (12, 85, 48093745)
