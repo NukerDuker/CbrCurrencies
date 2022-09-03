@@ -1,1 +1,0 @@
-insert into spend (id, chat_id, spend) values (12, 85, 48093745)
